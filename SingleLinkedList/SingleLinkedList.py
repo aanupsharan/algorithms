@@ -9,12 +9,15 @@ class SingleLinkedList:
         self.head = None
     
     def printList(self):
+        if self.head == None:
+            print("Empty Linked list")
         temp = self.head
         while temp != None:
             print(temp.val)
             if temp.next != None:
                 print("|")
             temp = temp.next
+        print("=====================")
 
 
     
@@ -32,7 +35,43 @@ class SingleLinkedList:
     def insertNodeAtStart(self, node):
         node.next = self.head
         self.head = node
-                
+    
+    def deleteNodeFromEnd(self):
+        if self.head == None:
+            return
+        elif self.head.next == None:
+            self.head = None
+        else:
+            temp = self.head
+            while temp.next.next != None :
+                temp = temp.next
+            temp.next = None
+    
+    def deleteNodeFromStart(self):
+        if self.head == None:
+            return
+        elif self.head.next == None:
+            self.head = None
+        else:
+            self.head = self.head.next
+
+    def deleteNodeByValue(self, value):
+        if self.head == None:
+            return
+        if self.head.val == value:
+            self.head = self.head.next
+        else:
+            temp1, temp2 = self.head, self.head.next
+            while temp2 != None:
+                if temp2.val == value:
+                    temp1.next = temp2.next
+                    temp2.next = None
+                    break
+                temp1 = temp1.next
+                temp2 = temp2.next
+            print("The "+ str(value) +"is not found in the list")
+            
+
 
 n1 = Node(1)
 n2 = Node(2)
@@ -58,5 +97,30 @@ h.insertNodeAtStart(n3)
 h.insertNodeAtStart(n4)
 h.insertNodeAtStart(n5)
 
+h.printList()
+
+"""
+h.deleteNodeFromEnd()
+h.deleteNodeFromEnd()
+h.deleteNodeFromEnd()
+h.deleteNodeFromEnd()
+h.deleteNodeFromEnd()
+h.deleteNodeFromEnd()
+"""
+
+"""
+h.deleteNodeFromStart()
+h.printList()
+h.deleteNodeFromEnd()
+h.printList()
+h.deleteNodeFromStart()
+h.printList()
+h.deleteNodeFromEnd()
+h.printList()
+h.deleteNodeFromStart()
+h.printList()
+"""
+
+h.deleteNodeByValue(0)
 h.printList()
 
