@@ -69,7 +69,7 @@ class SingleLinkedList:
                     break
                 temp1 = temp1.next
                 temp2 = temp2.next
-            print("The "+ str(value) +"is not found in the list")
+            print("The "+ str(value) +" is not found in the list")
             
 
 
