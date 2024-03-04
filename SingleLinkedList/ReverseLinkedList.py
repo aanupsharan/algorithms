@@ -15,7 +15,7 @@ def reverseSingleLinkedList(ll):
 def main():
     n1 = Node(1)
     n2 = Node(2)
-    #n3 = Node(3)
+    n3 = Node(3)
     #n4 = Node(4)
     #n5 = Node(5)
 
@@ -23,7 +23,7 @@ def main():
 
     h.insertNodeAtEnd(n1)
     h.insertNodeAtEnd(n2)
-    #h.insertNodeAtEnd(n3)
+    h.insertNodeAtEnd(n3)
     #h.insertNodeAtEnd(n4)
     #h.insertNodeAtEnd(n5)
 
