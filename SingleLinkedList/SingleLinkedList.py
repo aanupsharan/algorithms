@@ -1,8 +1,4 @@
-class Node:
-    def __init__(self, data):
-        self.val = data
-        self.next = None
-
+from Node import Node
 
 class SingleLinkedList:
     def __init__(self):
@@ -72,55 +68,60 @@ class SingleLinkedList:
             print("The "+ str(value) +" is not found in the list")
             
 
-
-n1 = Node(1)
-n2 = Node(2)
-n3 = Node(3)
-n4 = Node(4)
-n5 = Node(5)
-
-
-h = SingleLinkedList()
-
-"""
-h.insertNodeAtEnd(n1)
-h.insertNodeAtEnd(n2)
-h.insertNodeAtEnd(n3)
-h.insertNodeAtEnd(n4)
-h.insertNodeAtEnd(n5)
-"""
+def main():
+    n1 = Node(1)
+    n2 = Node(2)
+    n3 = Node(3)
+    n4 = Node(4)
+    n5 = Node(5)
 
 
-h.insertNodeAtStart(n1)
-h.insertNodeAtStart(n2)
-h.insertNodeAtStart(n3)
-h.insertNodeAtStart(n4)
-h.insertNodeAtStart(n5)
+    h = SingleLinkedList()
 
-h.printList()
+    """
+    h.insertNodeAtEnd(n1)
+    h.insertNodeAtEnd(n2)
+    h.insertNodeAtEnd(n3)
+    h.insertNodeAtEnd(n4)
+    h.insertNodeAtEnd(n5)
+    """
 
-"""
-h.deleteNodeFromEnd()
-h.deleteNodeFromEnd()
-h.deleteNodeFromEnd()
-h.deleteNodeFromEnd()
-h.deleteNodeFromEnd()
-h.deleteNodeFromEnd()
-"""
 
-"""
-h.deleteNodeFromStart()
-h.printList()
-h.deleteNodeFromEnd()
-h.printList()
-h.deleteNodeFromStart()
-h.printList()
-h.deleteNodeFromEnd()
-h.printList()
-h.deleteNodeFromStart()
-h.printList()
-"""
+    h.insertNodeAtStart(n1)
+    h.insertNodeAtStart(n2)
+    h.insertNodeAtStart(n3)
+    h.insertNodeAtStart(n4)
+    h.insertNodeAtStart(n5)
 
-h.deleteNodeByValue(0)
-h.printList()
+    h.printList()
 
+    """
+    h.deleteNodeFromEnd()
+    h.deleteNodeFromEnd()
+    h.deleteNodeFromEnd()
+    h.deleteNodeFromEnd()
+    h.deleteNodeFromEnd()
+    h.deleteNodeFromEnd()
+    """
+
+    """
+    h.deleteNodeFromStart()
+    h.printList()
+    h.deleteNodeFromEnd()
+    h.printList()
+    h.deleteNodeFromStart()
+    h.printList()
+    h.deleteNodeFromEnd()
+    h.printList()
+    h.deleteNodeFromStart()
+    h.printList()
+    """
+
+    h.deleteNodeByValue(0)
+    h.printList()
+
+
+
+
+if __name__ == "__main__":
+    main()
