@@ -66,6 +66,19 @@ class SingleLinkedList:
                 temp1 = temp1.next
                 temp2 = temp2.next
             print("The "+ str(value) +" is not found in the list")
+
+    def lengthOfList(self):
+        if self.head == None:
+            return 0
+
+        curr = self.head
+        count = 0
+
+        while curr != None:
+            count += 1
+            curr = curr.next
+
+        return count
             
 
 def main():
