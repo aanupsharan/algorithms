@@ -12,6 +12,27 @@ def height(root):
             return lHeight + 1
         else:
             return rHeight + 1
+def heightIterative(root):
+    if root == None:
+        return 0
+    queue = []
+    queue.append(root)
+    queue.append(None)
+    height = 0
+    while len(queue) > 0:
+        temp = queue.pop(0)
+        if temp == None :
+            height += 1
+        if temp != None:
+            if temp.left != None:
+                queue.append(temp.left)
+            if temp.right != None:
+                queue.append(temp.right)
+        elif len(queue) > 0:
+            queue.append(None)
+    return height
+            
+        
 
 if __name__ == "__main__":
     b = BinaryTree()
@@ -24,5 +45,5 @@ if __name__ == "__main__":
     r = b.insert(r, 60)
     r = b.insert(r, 80)
 
-    count = height(r)
+    count = heightIterative(r)
     print("The height of the Tree:"+str(count))
