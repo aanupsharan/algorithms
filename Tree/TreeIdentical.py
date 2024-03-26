@@ -3,6 +3,35 @@ sys.path.append('../')
 
 from TreeNode import TreeNode
 
+def isIdenticalByLevelOrder(r1, r2):
+    if not r1 and not r2:
+        return True
+    if not r1 or not r2:
+        return False
+    
+    q1 = []
+    q2 = []
+    q1.append(r1)
+    q2.append(r2)
+
+    while len(q1) > 0 and len(q2) > 0:
+        curr1 = q1.pop(0)
+        curr2 = q2.pop(0)
+
+        if curr1.value != curr2.value:
+            return False
+
+        if curr1.left:
+            q1.append(curr1.left)
+        if curr1.right:
+            q1.append(curr1.right)
+        if curr2.left:
+            q2.append(curr2.left)
+        if curr2.right:
+            q2.append(curr2.right)
+
+    return not len(q1) > 0 and not len(q2) > 0
+
 def isIdentical(r1, r2):
     if not r1 and not r2:
         return True
@@ -56,7 +85,7 @@ if __name__ == "__main__":
     root2.left.left = TreeNode(4)
     root2.left.right = TreeNode(5)
 
-    if isIdentical(root1, root2):
+    if isIdenticalByLevelOrder(root1, root2):
         print("Trees are identical")
     else:
         print("Trees are not identical")
