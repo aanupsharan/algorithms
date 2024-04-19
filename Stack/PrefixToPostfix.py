@@ -6,7 +6,7 @@ def isOperator(c):
 def prefixToPostfix(expr):
 
     stack = []
-    i = len(expr) - 1
+    i = len(expr) - 1   
 
     while i >= 0:
         if isOperator(expr[i]):
