@@ -17,8 +17,8 @@ def infixToPostfix(expr):
     result = []
     stack = []
 
+    expr = '(' + expr + ')'
     for i in range(len(expr)):
-        
         c = expr[i]
         if ('a' <= c <= 'z') or ('A' <= c <= 'Z') or ('0' <= c <= '9') :
             result.append(c)
@@ -29,9 +29,6 @@ def infixToPostfix(expr):
                 result.append(stack.pop())
             stack.pop()
         else:
-            if len(stack) == 0:
-                stack.append(c)
-                continue
             while len(stack) > 0 and (prec(c) < prec(stack[-1]) or 
                                      (prec(c) == prec(stack[-1]) and associativity(c) == 'L')):
                 result.append(stack.pop())
