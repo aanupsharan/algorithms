@@ -13,10 +13,7 @@ class SingleLinkedList:
             if temp.next != None:
                 print("|")
             temp = temp.next
-        print("=====================")
 
-
-    
     def insertNodeAtEnd(self, node):
         if(node == None):
             return 0;
@@ -70,7 +67,7 @@ class SingleLinkedList:
     def lengthOfList(self):
         if self.head == None:
             return 0
-
+        
         curr = self.head
         count = 0
 
